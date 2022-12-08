@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "56363939829",
+    "project_id": "booksapp-dcc2a",
+    "storage_bucket": "booksapp-dcc2a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:56363939829:android:8bd52274b744c2e85bd2bc",
+        "android_client_info": {
+          "package_name": "com.example.booksapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "56363939829-hnm572kr8a3qvnd47k5no2qhi3ge30rm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCy7E0twbEJF6Un7b-elOZg6ech-CZqLjg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "56363939829-hnm572kr8a3qvnd47k5no2qhi3ge30rm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
