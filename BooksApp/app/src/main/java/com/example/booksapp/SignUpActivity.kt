@@ -1,43 +1,58 @@
 package com.example.booksapp
 
 //import android.content.ContentValues
+import android.content.ContentValues
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+
 //import android.widget.Button
 //import android.widget.TextView
 //import android.widget.Toast
 
 class SignUpActivity : AppCompatActivity() {
+
+    lateinit var fnameID: EditText
+    lateinit var lnameID: EditText
+    lateinit var emailID: EditText
+    lateinit var passID: EditText
+    lateinit var signupbtn: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
-        /*var helper = DbHelper(applicationContext)
+        //getting the variables ID
+        fnameID = findViewById(R.id.editTextFName)
+        lnameID = findViewById(R.id.editTextLName)
+        emailID = findViewById(R.id.editTextEmailAddress)
+        passID = findViewById(R.id.editTextPassword)
+        signupbtn = findViewById(R.id.signup)
+
+        var helper = DbHelper(applicationContext)
         var db = helper.readableDatabase
-        var rs  = db.rawQuery("SELECT * FROM SIGNUP", null);
+        var rs  = db.rawQuery("SELECT * FROM LOGIN", null);
 
-        if(rs.moveToNext())
-        {
-            Toast.makeText(applicationContext, rs.getString(1), Toast.LENGTH_LONG).show()
-        }
 
-        val login = findViewById<Button>(R.id.loginButton)
-        val fname = findViewById<TextView>(R.id.editTextFName)
-        val name = findViewById<TextView>(R.id.editTextLName)
-        val email = findViewById<TextView>(R.id.editTextEmailAddress)
-        val password = findViewById<TextView>(R.id.editTextPassword)
-        
-        login.setOnClickListener{
+        signupbtn.setOnClickListener{
             var cv = ContentValues()
-            cv.put("FNAME",fname.text.toString())
-            cv.put("NAME",name.text.toString())
-            cv.put("EMAIL",email.text.toString())
-            cv.put("PASSWORD",password.text.toString())
+            cv.put("FNAME",fnameID.text.toString())
+            cv.put("LNAME",lnameID.text.toString())
+            cv.put("EMAIL",emailID.text.toString())
+            cv.put("PASSWORD",passID.text.toString())
+            db.insert("LOGIN", null, cv)
+            rs.requery()
 
-            //fname.text = ""
-            name.text = ""
-            email.text = ""
-            password.text = ""
-        }*/
+            Toast.makeText(applicationContext, "Inserted your login details", Toast.LENGTH_LONG).show()
+
+            fnameID.setText("")
+            lnameID.setText("")
+            emailID.setText("")
+            passID.setText("")
+            fnameID.requestFocus()
+
+        }
     }
 }
