@@ -8,12 +8,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 
-//import android.widget.Button
-//import android.widget.TextView
-//import android.widget.Toast
-
 class SignUpActivity : AppCompatActivity() {
 
+    //declaring the variables
     lateinit var fnameID: EditText
     lateinit var lnameID: EditText
     lateinit var emailID: EditText
@@ -31,11 +28,12 @@ class SignUpActivity : AppCompatActivity() {
         passID = findViewById(R.id.editTextPassword)
         signupbtn = findViewById(R.id.signup)
 
+        //creating an instance of the db
         var helper = DbHelper(applicationContext)
         var db = helper.readableDatabase
         var rs  = db.rawQuery("SELECT * FROM LOGIN", null);
 
-
+        //when sign up button is clicked , insert the details into the LOGIN table
         signupbtn.setOnClickListener{
             var cv = ContentValues()
             cv.put("FNAME",fnameID.text.toString())
@@ -43,16 +41,16 @@ class SignUpActivity : AppCompatActivity() {
             cv.put("EMAIL",emailID.text.toString())
             cv.put("PASSWORD",passID.text.toString())
             db.insert("LOGIN", null, cv)
-            rs.requery()
-
+            rs.requery()    //updates the table everytime data is inserted
+            
+            //display toast message
             Toast.makeText(applicationContext, "Inserted your login details", Toast.LENGTH_LONG).show()
-
+            //set the input text fields to " ", and move cursor to the first text field i.e First Name
             fnameID.setText("")
             lnameID.setText("")
             emailID.setText("")
             passID.setText("")
             fnameID.requestFocus()
-
         }
     }
 }
