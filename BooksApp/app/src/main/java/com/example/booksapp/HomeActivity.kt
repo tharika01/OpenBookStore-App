@@ -1,5 +1,6 @@
 package com.example.booksapp
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +9,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.booksapp.databinding.ActivityHomeBinding
+import com.example.booksapp.databinding.FragmentHomeBinding
 
 class HomeActivity : AppCompatActivity() {
 
@@ -31,5 +33,15 @@ class HomeActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        binding.fabDonate.setOnClickListener{
+            val intent = Intent(this@HomeActivity, DonorActivity::class.java)
+            startActivity(intent)
+        }
+
+        //on click listener added to navigate to donor page
+        binding.fabDonate.setOnClickListener{
+            var intent = Intent(this@HomeActivity, DonorActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
