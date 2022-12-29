@@ -9,7 +9,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.booksapp.databinding.ActivityHomeBinding
-import com.example.booksapp.databinding.FragmentHomeBinding
+import com.example.booksapp.Entities.donor.DonorActivity
 
 class HomeActivity : AppCompatActivity() {
 

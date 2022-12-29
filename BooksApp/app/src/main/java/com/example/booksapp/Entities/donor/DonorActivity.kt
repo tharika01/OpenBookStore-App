@@ -1,10 +1,10 @@
-package com.example.booksapp
+package com.example.booksapp.Entities.donor
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.booksapp.BooksDatabase
 import com.example.booksapp.databinding.ActivityDonorBinding
-import com.example.booksapp.donor.Donor
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch

@@ -1,4 +1,4 @@
-package com.example.booksapp.login
+package com.example.booksapp.Entities.login
 
 //import androidx.annotation.NonNull
 import androidx.room.ColumnInfo

@@ -1,9 +1,10 @@
-package com.example.booksapp
+package com.example.booksapp.Entities.login
 
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.booksapp.BooksDatabase
 import com.example.booksapp.databinding.ActivitySignUpBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope

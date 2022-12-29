@@ -24,7 +24,7 @@
         </activity>
         <activity
             android:label="SignUp"
-            android:name=".SignUpActivity"
+            android:name=".Entities.login.SignUpActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -32,7 +32,7 @@
         </activity>
         <activity
             android:label="Donate"
-            android:name=".DonorActivity"
+            android:name=".Entities.donor.DonorActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

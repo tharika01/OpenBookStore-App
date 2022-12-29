@@ -1,4 +1,4 @@
-package com.example.booksapp.donor
+package com.example.booksapp.Entities.donor
 
 import androidx.room.* //data access object
 

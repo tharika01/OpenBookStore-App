@@ -1,7 +1,9 @@
-package com.example.booksapp.login
+package com.example.booksapp.Entities.login
 
 import androidx.room.*
 import androidx.room.Query
+import java.util.concurrent.Flow
+import com.example.booksapp.Entities.login.LoginDao as LoginDao1
 
 @Dao
 interface LoginDao {
@@ -11,8 +13,9 @@ interface LoginDao {
     /*@Query("SELECT * FROM login WHERE emailID=:emailID")
     suspend fun emailexists(emailID: String)*/
 
-    /*@Query("SELECT EXISTS(SELECT emailID,password FROM login where emailID = :emailID and password = :pass)")
-    suspend fun authorizeuser(emailID : String, pass: String) :Int*/
-
+    @Query("SELECT id FROM LOGIN where emailID LIKE :emailID and password LIKE :pass")
+    suspend fun authorize_user(emailID : String, pass: String) : Int{
+        return 1
+    }
 
 }
