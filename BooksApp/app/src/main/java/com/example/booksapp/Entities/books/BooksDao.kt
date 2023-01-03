@@ -10,8 +10,8 @@ interface BooksDao {
     @Query("SELECT * FROM books_table")
     fun getAll(): List<Books>
 
-    @Query("SELECT BName FROM books_table WHERE bookid = :bookid " )
-    suspend fun findById(bookid: Int) : Books
+    /*@Query("SELECT BName FROM books_table WHERE bookid = :bookid " )
+    suspend fun findById(bookid: Int) : Books*/
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(donor: Books) //Called using book method in MainActivity.kt

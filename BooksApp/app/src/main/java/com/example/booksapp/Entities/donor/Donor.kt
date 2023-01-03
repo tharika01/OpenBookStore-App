@@ -10,7 +10,7 @@ data class Donor(
     @PrimaryKey(autoGenerate = true) val donorid: Int?,
     @ColumnInfo(name= "DFName") val dfname: String?,
     @ColumnInfo(name="DLName") val dlname:String?,
-    @ColumnInfo(name= "DPh.No") val dphno: String?,
+    @ColumnInfo(name= "DPh_No") val dphno: String?,
     @ColumnInfo(name= "DAddress") val daddress: String?,
     @ColumnInfo(name= "DEmail_ID") val demailid: String?,
     @ColumnInfo(name= "DBook_name") val dbookname: String?,

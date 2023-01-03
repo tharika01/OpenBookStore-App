@@ -9,7 +9,7 @@
     android:paddingTop="16dp"
     android:paddingRight="16dp"
     android:paddingBottom="16dp"
-    android:background="@color/black">
+    android:background="#cec4ff">
 
     <EditText
         android:id="@+id/editTextFName"
@@ -17,12 +17,14 @@
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="140dp"
-        android:background="#30ffffff"
-        android:drawableLeft="@drawable/user"
+        android:textColor="@color/black"
+        android:textColorHint="#546E7A"
+        android:drawableStart="@drawable/user"
         android:drawablePadding="20dp"
         android:ems="15"
         android:hint="First Name"
-        android:inputType="text" />
+        android:inputType="text"
+        android:background="@drawable/rounded_corners"/>
 
     <EditText
         android:id="@+id/editTextLName"
@@ -31,44 +33,80 @@
         android:layout_below="@id/editTextFName"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:background="#30ffffff"
-        android:drawableLeft="@drawable/user"
+        android:drawableStart="@drawable/user"
         android:drawablePadding="20dp"
         android:ems="15"
         android:hint="Last Name"
-        android:inputType="text" />
+        android:inputType="text"
+        android:background="@drawable/rounded_corners"
+        android:textColor="@color/black"
+        android:textColorHint="#546E7A"/>
 
     <EditText
-        android:id="@+id/editTextEmailAddress"
+        android:id="@+id/Address"
         android:layout_width="355dp"
         android:layout_height="50dp"
         android:layout_below="@+id/editTextLName"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:background="#30ffffff"
+        android:drawableStart="@drawable/ic_home_black_24dp"
+        android:drawablePadding="20dp"
+        android:ems="15"
+        android:hint="Address"
+        android:inputType="textAutoComplete"
+        android:background="@drawable/rounded_corners"
+        android:textColor="@color/black"
+        android:textColorHint="#546E7A"/>
+
+    <EditText
+        android:id="@+id/phone_number"
+        android:layout_width="355dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Address"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/phone"
+        android:drawablePadding="20dp"
+        android:ems="15"
+        android:hint="Mobile number"
+        android:inputType="number"
+        android:background="@drawable/rounded_corners"
+        android:textColor="@color/black"
+        android:textColorHint="#546E7A"/>
+
+    <EditText
+        android:id="@+id/editTextEmailAddress"
+        android:layout_width="355dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/phone_number"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         android:drawableLeft="@drawable/email"
         android:drawablePadding="20dp"
         android:ems="15"
         android:hint="Enter Email-ID"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:background="@drawable/rounded_corners"
+        android:textColor="@color/black"
+        android:textColorHint="#546E7A"/>
 
 
     <EditText
         android:id="@+id/editTextPassword"
-        android:layout_width="356dp"
+        android:layout_width="400dp"
         android:layout_height="50dp"
         android:layout_below="@id/editTextEmailAddress"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:background="#30ffffff"
+        android:layout_marginTop="21dp"
+        android:background="@drawable/rounded_corners"
         android:drawableLeft="@drawable/password"
         android:ems="15"
-        android:hint="Enter Password"
-        android:inputType="textPassword">
-
+        android:hint="   Enter Password"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:textColorHint="#546E7A">
     </EditText>
-
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/signupBtn"
@@ -80,7 +118,8 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/purple_200"
+        android:backgroundTint="#ab86b3"
+        android:textColor="@color/white"
         android:text="Sign Up">
 
     </com.google.android.material.button.MaterialButton>

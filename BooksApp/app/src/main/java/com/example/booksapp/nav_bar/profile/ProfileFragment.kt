@@ -1,18 +1,30 @@
 package com.example.booksapp.nav_bar.profile
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.example.booksapp.databinding.FragmentProfileBinding
+import androidx.lifecycle.ViewModelProvider
+import com.example.booksapp.BooksDatabase
+import com.example.booksapp.Entities.donor.Donor
+import com.example.booksapp.Entities.receiver.ReceiverActivity
+import com.example.booksapp.databinding.ActivityDonorBinding
+import com.example.booksapp.databinding.ActivityReceiverBinding
+import com.example.booksapp.receiver.Receiver
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
-class ProfileFragment : Fragment() {
+
+class ProfileFragment : Fragment()  {
 
     private var _binding: FragmentProfileBinding? = null
-
+    private lateinit var binding2 : ActivityReceiverBinding
+    private lateinit var appDb : BooksDatabase //Reference variable for our database
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -28,15 +40,34 @@ class ProfileFragment : Fragment() {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textProfile
+        /*val textView: TextView = binding.
         notificationsViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
-        }
+        }*/
+        /*lateinit var receiver: List<Receiver>
+        receiver = appDb.ReceiverDao().getAll()
+        binding.editTextFName.text = receiver.get(0).toString()
+        binding.editTextLName.text= receiver.get(1).toString()
+        binding.phoneNumber.text = receiver.get(2).toString()
+        binding.Address.text = receiver.get(3).toString()*/
+
+
         return root
     }
 
+    /*private suspend fun displayData(receiver: List<Receiver>) {
+        withContext(Dispatchers.Main){
+            binding.editTextFName.text = receiver.get(0).toString()
+            binding.editTextLName.text= receiver.get(1).toString()
+            binding.phoneNumber.text = receiver.get(2).toString()
+            binding.Address.text = receiver.get(3).toString()
+        }
+    }*/
+
+
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
+            _binding = null
+        }
+
     }
-}

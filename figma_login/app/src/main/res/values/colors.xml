@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+<color name="gray_600">#72567a</color>
+<color name="gray_400">#c6c6c6</color>
+<color name="gray_500">#a97798</color>
+<color name="gray_800">#3c3c3c</color>
+<color name="gray_600_75">#7572567a</color>
+<color name="gray_900">#1f2327</color>
+<color name="yellow_900">#e18418</color>
+<color name="black_900_3f">#3f000000</color>
+<color name="gray_300">#e6cfe2</color>
+<color name="white_A700">#ffffff</color>
+<color name="gray_50">#f9f9f9</color>
+<color name="ic_launcher_background">#FFFFFF</color>
+</resources>

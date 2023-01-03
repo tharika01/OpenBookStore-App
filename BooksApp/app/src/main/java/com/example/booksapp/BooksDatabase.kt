@@ -6,6 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.booksapp.Books.Books
 import com.example.booksapp.Books.BooksDao
+import com.example.booksapp.Entities.DBProjectDao
 import com.example.booksapp.Entities.book_category.BookCategory
 import com.example.booksapp.Entities.book_category.BookCategoryDao
 import com.example.booksapp.Entities.cart.Cart
@@ -24,6 +25,7 @@ import com.example.booksapp.receiver.ReceiverDao
                       Receiver :: class,
                       BookCategory :: class], version = 1)
 abstract class BooksDatabase : RoomDatabase() {
+    abstract fun DBProjectDao() : DBProjectDao
     abstract fun LoginDao() : LoginDao
     abstract fun DonorDao(): DonorDao
     abstract fun BookCategoryDao(): BookCategoryDao
@@ -43,7 +45,7 @@ abstract class BooksDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     BooksDatabase::class.java,
-                    "database"
+                    "database5"
                 ).build()
 
                 INSTANCE = instance

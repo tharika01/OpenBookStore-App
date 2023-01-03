@@ -33,7 +33,6 @@ class HomeFragment : Fragment() {
             textView.text = it
         }
 
-
         //on click listener added to navigate to donor page
         /*binding.fabDonate.setOnClickListener{
             var intent = Intent(this@HomeFragment, DonorActivity::class.java)

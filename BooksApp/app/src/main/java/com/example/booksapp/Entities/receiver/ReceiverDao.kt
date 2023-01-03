@@ -12,6 +12,7 @@ interface ReceiverDao {
 
     @Query("SELECT RFName,RLName FROM receiver_table WHERE receiverid = :receiverid " )
     suspend fun findById(receiverid: Int) :Receiver
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(donor: Receiver) //Called using student method in MainActivity.kt
 

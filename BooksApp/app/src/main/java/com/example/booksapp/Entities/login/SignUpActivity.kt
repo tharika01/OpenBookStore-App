@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.booksapp.BooksDatabase
+import com.example.booksapp.Entities.donor.Donor
 import com.example.booksapp.databinding.ActivitySignUpBinding
+import com.example.booksapp.receiver.Receiver
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -32,16 +34,30 @@ class SignUpActivity : AppCompatActivity() {
         val lastName = binding.editTextLName.text.toString()
         val email = binding.editTextEmailAddress.text.toString()
         val password = binding.editTextPassword.text.toString()
+        val address = binding.Address.text.toString()
+        val mob_num = binding.phoneNumber.text.toString()
 
-        if(firstName.isNotEmpty() && lastName.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()){
+        if(firstName.isNotEmpty() && lastName.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && address.isNotEmpty() && mob_num.isNotEmpty()){
             GlobalScope.launch(Dispatchers.IO){
+                //adding user details to donor table, receiver and login table
+                val donor = Donor(
+                    null, firstName, lastName, mob_num, address, email, null, null
+                )
+                val receiver = Receiver(
+                    null, firstName, lastName, mob_num, address, email, null,null
+                )
                 BookDb.LoginDao().insert(firstName, lastName,email, password)
+                BookDb.DonorDao().insert(donor)
+                BookDb.ReceiverDao().insert(receiver)
             }
 
             binding.editTextFName.text.clear()
             binding.editTextLName.text.clear()
             binding.editTextEmailAddress.text.clear()
             binding.editTextPassword.text.clear()
+            binding.Address.text.clear()
+            binding.phoneNumber.text.clear()
+
             Toast.makeText(this, "Successfully Written", Toast.LENGTH_SHORT).show()
         }
         else{

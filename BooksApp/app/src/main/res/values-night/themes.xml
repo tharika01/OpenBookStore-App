@@ -2,15 +2,24 @@
     <!-- Base application theme. -->
     <style name="Theme.BooksApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimary">@color/skyBlue</item>
+        <item name="colorPrimaryVariant">@color/oceanBlue</item>
+        <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorOnSecondary">@color/skyBlue</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- action bar color. -->
+        <item name="android:actionBarItemBackground">?attr/colorPrimary</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="AppTheme.ActionBar" parent="Widget.AppCompat.Light.ActionBar">
+        <item name="background">@color/skyBlue</item>
+        <item name="android:height">150dp</item>
+        <item name="height">60dp</item>
+    </style>
 </resources>
+<!--<item name="android:titleTextStyle">@style/AppTheme.ActionBar.TitleText</item>
+<item name="titleTextStyle">@style/AppTheme.ActionBar.TitleText</item> !-->

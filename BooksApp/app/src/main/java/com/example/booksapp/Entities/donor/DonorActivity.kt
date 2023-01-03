@@ -38,33 +38,33 @@ class DonorActivity : AppCompatActivity() {
 
     private fun writeData(){
 
-        val firstName= binding.etFirstName.text.toString()
-        val lastName = binding.etLastName.text.toString()
+        //val firstName= binding.etFirstName.text.toString()
+        //val lastName = binding.etLastName.text.toString()
         val bookNumber =binding.etbookNumber.text.toString()
-        val address=binding.etaddress.text.toString()
-        val emailId=binding.etemailId.text.toString()
-        val phoneNumber=binding.etphoneNumber.text.toString()
+        //val address=binding.etaddress.text.toString()
+        //val emailId=binding.etemailId.text.toString()
+        //val phoneNumber=binding.etphoneNumber.text.toString()
         val bookName= binding.etbookName.text.toString()
         //donor id add
 
         //make sure first two boxes are not empty
-        if(firstName.isNotEmpty() && lastName.isNotEmpty()) {
+        if(bookName.isNotEmpty() && bookNumber.isNotEmpty()) {
             //Create object for our donor
-            //Pass null for donor id as it is auto generated
             val donor = Donor(
-                null, firstName, lastName, phoneNumber, address, emailId, bookName,bookNumber
+                null, null, null,null,null, null, bookName, bookNumber
             )
 
             // Coroutine: Just like IO type operation
             //Calling all the methods inside coroutines
             GlobalScope.launch(Dispatchers.IO) {
                 //Putting all the details to table
-                appDb.DonorDao().insert(donor) //Calling insert method of donordao by passing object donor
+                appDb.DonorDao().update(bookName, bookNumber,  donor.donorid)
+                //appDb.DonorDao().update(bookName,bookNumber) //Calling insert method of donordao by passing object donor
             }
 
             //clear all input text fields
-            binding.etFirstName.text.clear()
-            binding.etLastName.text.clear()
+            binding.etbookNumber.text.clear()
+            binding.etbookName.text.clear()
 
             Toast.makeText(this@DonorActivity, "Successfully updated", Toast.LENGTH_SHORT).show()
         }else{
@@ -78,7 +78,7 @@ class DonorActivity : AppCompatActivity() {
         withContext(Dispatchers.Main){
             binding.tvFirstName.text = donor.dfname
             binding.tvLastName.text= donor.dlname
-            binding.tvRollNo.text = donor.donorid.toString()
+            //binding.etbookName.text = donor.dphno
         }
     }
 

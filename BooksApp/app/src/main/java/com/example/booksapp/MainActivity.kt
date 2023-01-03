@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.booksapp.databinding.ActivityMainBinding
-import com.example.booksapp.Entities.login.Login
 import com.example.booksapp.Entities.login.SignUpActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -35,7 +34,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.loginButton.setOnClickListener{
-            authorizeLogin()
+            val res = authorizeLogin()
+            Toast.makeText(this@MainActivity, "Login Successful", Toast.LENGTH_LONG).show()
         }
     }
 
@@ -46,10 +46,9 @@ class MainActivity : AppCompatActivity() {
         println("Entered login")
         if(email.isNotEmpty() && password.isNotEmpty()){
             GlobalScope.launch(Dispatchers.IO){
-                login = BookDb.LoginDao().authorize_user(email, password)!! as Int
+                login = BookDb.LoginDao().authorize_user(email, password)
                 //println(login.emailID.equals(email))
-                if(login >= 1){
-                    //Toast.makeText(this@launch, "Login Successful", Toast.LENGTH_LONG).show()
+                if(login != null){
                     val intent = Intent(this@MainActivity, HomeActivity::class.java)
                     startActivity(intent)
                 }
@@ -58,16 +57,13 @@ class MainActivity : AppCompatActivity() {
                     //Toast.makeText(this@MainActivity, "Invalid login details", Toast.LENGTH_LONG).show()
                     val intent = Intent(this@MainActivity, SignUpActivity::class.java)
                     startActivity(intent)
-                }/*
-                val intent = Intent(this@MainActivity, HomeActivity::class.java)
-                startActivity(intent)*/
+                }
             }
         }
         else
         {
             Toast.makeText(this@MainActivity, "Please enter some data", Toast.LENGTH_LONG).show()
         }
-
     }
 }
 

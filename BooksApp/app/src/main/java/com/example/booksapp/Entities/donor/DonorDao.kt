@@ -17,8 +17,18 @@ interface DonorDao {
 
     //suspend function we will do the operation in coroutines
     //since the insertion are IO operation it will take lot of time
+    //@Insert(onConflict = OnConflictStrategy.IGNORE)
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(donor: Donor) //Called using student method in MainActivity.kt
+
+
+    //updating donor table with book details
+    @Query("UPDATE donor_table " +
+            "SET DBook_name = :bookName,DBook_id = :bookNo " +
+            "WHERE donorid = :id")
+    suspend fun update(bookName: String, bookNo: String, id: Int?)
+    /*@Update
+    suspend fun update(bookName: String, bookNo: String)*/
 
     @Delete
     suspend fun delete(donor: Donor)
