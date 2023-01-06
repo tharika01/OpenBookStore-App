@@ -5,33 +5,27 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.booksapp.Books.Books
-import com.example.booksapp.Books.BooksDao
 import com.example.booksapp.Entities.DBProjectDao
+import com.example.booksapp.Entities.Relations.Books_Donor.DonorBooksCross
+import com.example.booksapp.Entities.Relations.Books_Receiver.ReceiverBooksCross
+import com.example.booksapp.Entities.Relations.Donor_Receiver.DonorReceiverCross
 import com.example.booksapp.Entities.book_category.BookCategory
-import com.example.booksapp.Entities.book_category.BookCategoryDao
 import com.example.booksapp.Entities.cart.Cart
-import com.example.booksapp.Entities.cart.CartDao
 import com.example.booksapp.Entities.donor.Donor
-import com.example.booksapp.Entities.donor.DonorDao
 import com.example.booksapp.Entities.login.Login
-import com.example.booksapp.Entities.login.LoginDao
 import com.example.booksapp.receiver.Receiver
-import com.example.booksapp.receiver.ReceiverDao
 
 @Database(entities = [Login :: class,
-                      Donor :: class,
-                      Cart :: class,
-                      Books :: class,
-                      Receiver :: class,
-                      BookCategory :: class], version = 1)
+    Donor :: class,
+    Cart :: class,
+    Books :: class,
+    Receiver :: class,
+    BookCategory :: class ,
+    DonorBooksCross :: class,
+    ReceiverBooksCross :: class,
+    DonorReceiverCross :: class], version = 1)
 abstract class BooksDatabase : RoomDatabase() {
-    abstract fun DBProjectDao() : DBProjectDao
-    abstract fun LoginDao() : LoginDao
-    abstract fun DonorDao(): DonorDao
-    abstract fun BookCategoryDao(): BookCategoryDao
-    abstract fun CartDao(): CartDao
-    abstract fun BooksDao(): BooksDao
-    abstract fun ReceiverDao(): ReceiverDao
+    abstract val dbProjectDao : DBProjectDao
 
     companion object {
         @Volatile
@@ -45,7 +39,7 @@ abstract class BooksDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     BooksDatabase::class.java,
-                    "database5"
+                    "database6"
                 ).build()
 
                 INSTANCE = instance

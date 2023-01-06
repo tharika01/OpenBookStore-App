@@ -58,7 +58,7 @@ class DonorActivity : AppCompatActivity() {
             //Calling all the methods inside coroutines
             GlobalScope.launch(Dispatchers.IO) {
                 //Putting all the details to table
-                appDb.DonorDao().update(bookName, bookNumber,  donor.donorid)
+                //appDb.dbProjectDao.update(bookName, bookNumber,  donor.donorid)
                 //appDb.DonorDao().update(bookName,bookNumber) //Calling insert method of donordao by passing object donor
             }
 
@@ -91,7 +91,7 @@ class DonorActivity : AppCompatActivity() {
             lateinit var donor: Donor
 
             GlobalScope.launch {
-                donor = appDb.DonorDao().findById(donorid.toInt())
+                donor = appDb.dbProjectDao.findById(donorid.toInt())
                 displayData(donor)
             }
         }

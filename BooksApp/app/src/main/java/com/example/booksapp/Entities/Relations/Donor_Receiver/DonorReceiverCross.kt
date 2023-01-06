@@ -2,9 +2,8 @@ package com.example.booksapp.Entities.Relations.Donor_Receiver
 
 import androidx.room.Entity
 
-@Entity(primaryKeys=["bookid","donorid", "receiverid"])
+@Entity(primaryKeys=["DonorID", "ReceiverID"])
 data class DonorReceiverCross (
-    val bookid: Int,
-    val donorid: Int,
-    val receiverid :Int
-    )
+    val DonorID: Int,
+    val ReceiverID:Int
+)

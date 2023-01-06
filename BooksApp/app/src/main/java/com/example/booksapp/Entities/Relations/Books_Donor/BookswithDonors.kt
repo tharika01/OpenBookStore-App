@@ -10,7 +10,7 @@ data class BookswithDonors(
     @Embedded val Books: Books,
     @Relation(
         parentColumn = "bookid",
-        entityColumn = "book_id",
+        entityColumn = "DonorID",
         associateBy= Junction(DonorBooksCross::class)
     )
     val donor:  List<Donor>

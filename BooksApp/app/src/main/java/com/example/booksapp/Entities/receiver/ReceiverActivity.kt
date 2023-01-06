@@ -63,7 +63,7 @@ class ReceiverActivity: AppCompatActivity() {
             //Calling all the methods inside coroutines
             GlobalScope.launch(Dispatchers.IO) {
                 //Putting all the details to table
-                appDb.ReceiverDao().insert(receiver) //Calling insert method of donordao by passing object donor
+                appDb.dbProjectDao.insertReceiver(receiver) //Calling insert method of donordao by passing object donor
             }
 
             //clear all input text fields
@@ -82,7 +82,7 @@ class ReceiverActivity: AppCompatActivity() {
         withContext(Dispatchers.Main){
             binding.tvFirstName.text = receiver.rfname
             binding.tvLastName.text= receiver.rlname
-            binding.tvRollNo.text = receiver.receiverid.toString()
+            binding.tvRollNo.text = receiver.ReceiverID.toString()
         }
     }
 
@@ -94,7 +94,7 @@ class ReceiverActivity: AppCompatActivity() {
         if (receiverid.isNotEmpty()) {
             lateinit var receiver: Receiver
             GlobalScope.launch {
-                receiver = appDb.ReceiverDao().findById(receiverid.toInt())
+                //receiver = appDb.dbProjectDao.findById(receiverid.toInt())
                 displayData(receiver)
             }
         }

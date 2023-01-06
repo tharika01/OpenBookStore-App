@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         println("Entered login")
         if(email.isNotEmpty() && password.isNotEmpty()){
             GlobalScope.launch(Dispatchers.IO){
-                login = BookDb.LoginDao().authorize_user(email, password)
+                login = BookDb.dbProjectDao.authorize_user(email, password)
                 //println(login.emailID.equals(email))
                 if(login != null){
                     val intent = Intent(this@MainActivity, HomeActivity::class.java)

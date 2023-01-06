@@ -11,8 +11,8 @@ data class BooksWithReceivers(
     @Embedded val Books:Books,
     @Relation(
         parentColumn = "bookid",
-        entityColumn = "book_id",
-        associateBy= Junction(DonorBooksCross::class)
+        entityColumn = "ReceiverID",
+        associateBy= Junction(ReceiverBooksCross::class)
     )
     val receiver:  List<Receiver>
 )

@@ -46,9 +46,9 @@ class SignUpActivity : AppCompatActivity() {
                 val receiver = Receiver(
                     null, firstName, lastName, mob_num, address, email, null,null
                 )
-                BookDb.LoginDao().insert(firstName, lastName,email, password)
-                BookDb.DonorDao().insert(donor)
-                BookDb.ReceiverDao().insert(receiver)
+                BookDb.dbProjectDao.insert(firstName, lastName,email, password)
+                BookDb.dbProjectDao.insertDonor(donor)
+                BookDb.dbProjectDao.insertReceiver(receiver)
             }
 
             binding.editTextFName.text.clear()

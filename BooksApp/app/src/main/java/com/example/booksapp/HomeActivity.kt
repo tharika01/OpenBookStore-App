@@ -6,6 +6,7 @@ import android.view.Menu
 import android.view.MenuItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -21,6 +22,7 @@ import com.example.booksapp.Entities.donor.Donor
 import com.example.booksapp.databinding.ActivityHomeBinding
 import com.example.booksapp.Entities.donor.DonorActivity
 import com.example.booksapp.receiver.Receiver
+import kotlinx.coroutines.launch
 
 class HomeActivity : AppCompatActivity() {
 
@@ -55,7 +57,7 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val dao = BooksDatabase.getDatabase(this).DBProjectDao()
+        val dao = BooksDatabase.getDatabase(this).dbProjectDao
         //Inserting values
         val donors= listOf(
             Donor(1,"Jerry","Thomson","1234567899","Bangalore","Jerry@gmail.com","HCVerma","101"),
@@ -95,8 +97,8 @@ class HomeActivity : AppCompatActivity() {
 
         )
         val cart=listOf(
-            Cart(101,1,"HCVerma"),
-            Cart(102,1,"Databasebook")
+            Cart(101,1,"HCVerma",1),
+            Cart(102,1,"Databasebook",5)
         )
         val donorbooksrelation=listOf(
             DonorBooksCross(101,101),
@@ -114,10 +116,20 @@ class HomeActivity : AppCompatActivity() {
             ReceiverBooksCross(107,107)
         )
         val donorreceiverrelation=listOf(
-            DonorReceiverCross(101,1,7),
-            DonorReceiverCross(102,2,5),
-            DonorReceiverCross(104,4,8)
+            DonorReceiverCross(101,1),
+            DonorReceiverCross(102,2),
+            DonorReceiverCross(104,4)
         )
+        lifecycleScope.launch {
+            donors.forEach { dao.insertDonor(it)}
+            receivers.forEach { dao.insertReceiver(it) }
+            books.forEach { dao.insertBooks(it) }
+            cart.forEach { dao.insertCart(it) }
+            BookCategory.forEach {dao.insertBookCategory(it)}
+            donorbooksrelation.forEach {dao.insertDonorBooksCross(it)}
+            donorreceiverrelation.forEach { dao.insertDonorReceiverCross(it)}
+            receiverbooksrelation.forEach { dao.insertReceiverBooksCross(it) }
+        }
     }
 
     //Adding cart to the action bar

@@ -10,8 +10,8 @@ import com.example.booksapp.receiver.Receiver
 data class ReceiverwithDonors(
     @Embedded val receiver: Receiver,
     @Relation(
-        parentColumn = "rfname",
-        entityColumn = "dfname",
+        parentColumn = "ReceiverID",
+        entityColumn = "DonorID",
         associateBy= Junction(DonorReceiverCross::class)
     )
     val donor: List<Donor>
