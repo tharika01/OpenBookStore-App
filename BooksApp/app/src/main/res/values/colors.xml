@@ -11,4 +11,7 @@
     <color name="oceanBlue">#82AAE3</color>
     <color name="lilac">#cec4ff</color>
     <color name="bg_color">#E8F9FD</color>
+    <color name="magenta">#7B2869</color>
+    <color name="Bottom_nav_bar">#A267AC</color>
+    <color name="lilac2">#E5B8F4</color>
 </resources>
