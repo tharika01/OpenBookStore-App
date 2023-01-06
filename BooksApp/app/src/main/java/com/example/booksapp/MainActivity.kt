@@ -17,8 +17,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        val action = supportActionBar
-        action!!.setTitle("Login")
+        /*val action = supportActionBar
+        action!!.setTitle("Login")*/
 
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)

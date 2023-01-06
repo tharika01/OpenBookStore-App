@@ -12,6 +12,11 @@
         android:title="category" />
 
     <item
+        android:id="@+id/navigation_cart"
+        android:icon="@drawable/cart"
+        android:title="cart" />
+
+    <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/profile"
         android:title="@string/profile" />

@@ -41,10 +41,10 @@ class HomeActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
+                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications, R.id.navigation_cart
             )
         )
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        //setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
         binding.fabDonate.setOnClickListener{
             val intent = Intent(this@HomeActivity, DonorActivity::class.java)
@@ -133,7 +133,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     //Adding cart to the action bar
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    /*override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.action_menu, menu)
         return true
     }
@@ -152,5 +152,5 @@ class HomeActivity : AppCompatActivity() {
             }
         }
 
-    }
+    }*/
 }

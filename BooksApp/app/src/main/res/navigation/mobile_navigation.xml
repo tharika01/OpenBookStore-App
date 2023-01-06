@@ -18,8 +18,15 @@
         tools:layout="@layout/fragment_search" />
 
     <fragment
+        android:id="@+id/navigation_cart"
+        android:name="com.example.booksapp.nav_bar.cart.CartFragment"
+        android:label="CartFragment"
+        tools:layout="@layout/fragment_cart"/>
+
+    <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.example.booksapp.nav_bar.profile.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
+
 </navigation>

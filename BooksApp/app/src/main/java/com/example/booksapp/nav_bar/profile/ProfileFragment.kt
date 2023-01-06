@@ -5,20 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.booksapp.databinding.FragmentProfileBinding
 import androidx.lifecycle.ViewModelProvider
 import com.example.booksapp.BooksDatabase
-import com.example.booksapp.Entities.donor.Donor
-import com.example.booksapp.Entities.receiver.ReceiverActivity
-import com.example.booksapp.databinding.ActivityDonorBinding
+import com.example.booksapp.MainActivity
 import com.example.booksapp.databinding.ActivityReceiverBinding
-import com.example.booksapp.receiver.Receiver
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
-
 
 class ProfileFragment : Fragment()  {
 
@@ -51,6 +43,12 @@ class ProfileFragment : Fragment()  {
         binding.phoneNumber.text = receiver.get(2).toString()
         binding.Address.text = receiver.get(3).toString()*/
 
+
+        //Logout of app
+        binding.logout.setOnClickListener{
+            var intent = Intent(this.requireContext(), MainActivity::class.java)
+            startActivity(intent)
+        }
 
         return root
     }

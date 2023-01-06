@@ -88,7 +88,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/social"
         android:layout_width="121dp"
-        android:layout_height="39dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/textViewSocial"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="40dp"
@@ -99,21 +99,21 @@
 
         <ImageButton
             android:id="@+id/Google"
-            android:layout_width="41dp"
-            android:layout_height="36dp"
+            android:layout_width="37dp"
+            android:layout_height="39dp"
             android:layout_centerHorizontal="true"
             android:layout_toLeftOf="@+id/facebook"
             android:background="@drawable/google"
             app:layout_constraintEnd_toStartOf="@+id/facebook"
             app:layout_constraintHorizontal_chainStyle="spread"
-            tools:layout_editor_absoluteY="2dp">
+            tools:layout_editor_absoluteY="-3dp">
 
         </ImageButton>
 
         <ImageButton
             android:id="@+id/facebook"
-            android:layout_width="39dp"
-            android:layout_height="36dp"
+            android:layout_width="40dp"
+            android:layout_height="39dp"
             android:layout_centerHorizontal="true"
             android:layout_marginStart="50dp"
             android:background="@drawable/facebook"
@@ -121,31 +121,31 @@
             app:layout_constraintHorizontal_bias="0"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="@id/Google"
-            tools:layout_editor_absoluteY="2dp">
+            tools:layout_editor_absoluteY="-2dp">
 
         </ImageButton>
 
         <ImageButton
             android:id="@+id/insta"
-            android:layout_width="42dp"
-            android:layout_height="37dp"
+            android:layout_width="41dp"
+            android:layout_height="43dp"
             android:background="@drawable/instagram"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toEndOf="@id/facebook"
-            tools:layout_editor_absoluteY="2dp">
+            tools:layout_editor_absoluteY="-4dp">
 
         </ImageButton>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <RelativeLayout
         android:id="@+id/accountCreate"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_width="268dp"
+        android:layout_height="59dp"
         android:layout_below="@id/social"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="76dp">
+        android:layout_marginBottom="116dp">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text1"
@@ -158,10 +158,10 @@
 
         <Button
             android:id="@+id/signUpButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/activity_vertical_margin"
-            android:layout_marginLeft="74dp"
+            android:layout_marginLeft="7dp"
             android:layout_toRightOf="@id/text1"
             android:backgroundTint="#ab86b3"
             android:singleLine="true"
