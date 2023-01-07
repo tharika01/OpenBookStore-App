@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import com.example.booksapp.databinding.FragmentProfileBinding
 import androidx.lifecycle.ViewModelProvider
 import com.example.booksapp.BooksDatabase
+import com.example.booksapp.LandingActivity
 import com.example.booksapp.MainActivity
 import com.example.booksapp.databinding.ActivityReceiverBinding
 
@@ -46,7 +47,7 @@ class ProfileFragment : Fragment()  {
 
         //Logout of app
         binding.logout.setOnClickListener{
-            var intent = Intent(this.requireContext(), MainActivity::class.java)
+            var intent = Intent(this.requireContext(), LandingActivity::class.java)
             startActivity(intent)
         }
 
