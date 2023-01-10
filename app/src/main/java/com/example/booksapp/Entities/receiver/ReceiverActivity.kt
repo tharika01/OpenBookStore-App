@@ -4,11 +4,8 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.booksapp.BooksDatabase
-import com.example.booksapp.Entities.donor.Donor
 
 import com.example.booksapp.databinding.ActivityReceiverBinding
-import com.example.booksapp.databinding.ActivityReceiverBinding.inflate
-import com.example.booksapp.nav_bar.profile.ProfileFragment
 import com.example.booksapp.receiver.Receiver
 
 import kotlinx.coroutines.Dispatchers

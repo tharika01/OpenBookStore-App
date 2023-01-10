@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".nav_bar.search.SearchFragment">
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Categories"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/imageButtonChem"
+            android:layout_width="284dp"
+            android:layout_height="264dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/chem"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <ImageButton
+            android:id="@+id/imageButtonPhy"
+            android:layout_width="295dp"
+            android:layout_height="313dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/physics"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageButtonChem" />
+
+        <ImageButton
+            android:id="@+id/imageButtonBio"
+            android:layout_width="292dp"
+            android:layout_height="321dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/biology"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageButtonPhy" />
+
+        <ImageButton
+            android:id="@+id/imageButtonMath"
+            android:layout_width="286dp"
+            android:layout_height="277dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/math"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageButtonBio" />
+
+        <ImageButton
+            android:id="@+id/imageButtonComp"
+            android:layout_width="286dp"
+            android:layout_height="290dp"
+            android:layout_marginTop="26dp"
+            android:src="@drawable/comp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageButtonMath" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

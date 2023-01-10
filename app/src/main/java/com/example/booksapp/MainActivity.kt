@@ -6,7 +6,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.booksapp.Entities.login.SignUpActivity
 import com.example.booksapp.databinding.ActivityMainBinding
-import com.example.booksapp.nav_bar.profile.ProfileFragment
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch

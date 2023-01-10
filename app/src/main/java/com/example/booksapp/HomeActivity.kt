@@ -8,7 +8,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.booksapp.Books.Books
 import com.example.booksapp.Entities.Relations.Books_Donor.DonorBooksCross
 import com.example.booksapp.Entities.Relations.Books_Receiver.ReceiverBooksCross
@@ -53,7 +52,7 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val dao = BooksDatabase.getDatabase(this).dbProjectDao
+        val dao = BooksDatabase.getDatabase(this@HomeActivity).dbProjectDao
         //Inserting values
         val donors= listOf(
             Donor(1,"Jerry","Thomson","1234567899","Bangalore","Jerry@gmail.com","HCVerma","101","https://via.placeholder.com/200"),
@@ -63,9 +62,6 @@ class HomeActivity : AppCompatActivity() {
             Donor(5,"Laala","Dipsy","7834567899","Hyderabad","laala@gmail.com","RichDadPoorDad","105","https://via.placeholder.com/200"),
             Donor(5,"Radha","Roopesh","6834567899","Kochi","Radha@gmail.com","HCVerma","101","https://via.placeholder.com/200"),
             Donor(5,"Karthik","S","3834567899","Sullia","Karthik@gmail.com","Oliver-chemistry","103","https://via.placeholder.com/200")
-
-
-
         )
         val receivers=listOf(
             Receiver(5,"Laala","Dipsy","7834567899","Hyderabad","laala@gmail.com","Databasebook","102"),
@@ -132,9 +128,9 @@ class HomeActivity : AppCompatActivity() {
         //rv = findViewById(R.id.recycler_view)
         //var bookList = ArrayList<Books>()
         //bookList = dao.getAllBooks()
-        binding.recyclerview.apply{
+        /*binding.recyclerview.apply{
             layoutManager = LinearLayoutManager(this@HomeActivity)
             adapter = BooksAdapter(books)
-        }
+        }*/
     }
 }

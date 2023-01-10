@@ -1,5 +1,6 @@
 package com.example.booksapp.Entities
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.booksapp.Books.Books
 import com.example.booksapp.Entities.Relations.*
@@ -122,6 +123,6 @@ interface DBProjectDao {
     @Query("DELETE FROM DONOR_TABLE WHERE DBook_name = :bookName")
     suspend fun deleteBook(bookName: String?)
 
-    /*@Query("SELECT * FROM books_table")
-    fun getAllBooks() : ArrayList<Books>*/
+    @Query("SELECT * FROM books_table")
+    fun getAllBooks() : LiveData<List<Books>>
 }
