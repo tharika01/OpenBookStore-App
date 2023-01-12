@@ -1,11 +1,13 @@
 package com.example.booksapp.Entities.login
 
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.booksapp.BooksDatabase
 import com.example.booksapp.Entities.donor.Donor
+import com.example.booksapp.LandingActivity
 import com.example.booksapp.databinding.ActivitySignUpBinding
 import com.example.booksapp.receiver.Receiver
 import kotlinx.coroutines.Dispatchers
@@ -26,6 +28,10 @@ class SignUpActivity : AppCompatActivity() {
 
         binding.signupBtn.setOnClickListener{
             writeData()
+        }
+        binding.backBtn.setOnClickListener {
+            val intent = Intent(this, LandingActivity::class.java)
+            startActivity(intent)
         }
 
     }

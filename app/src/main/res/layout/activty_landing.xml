@@ -3,26 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_image">
+    android:background="@drawable/langing1">
 
+    <ImageButton
+        android:id="@+id/login"
+        android:layout_width="187dp"
+        android:layout_height="48dp"
+        android:layout_above="@+id/registerbtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginBottom="20dp"
+        android:background="@android:color/transparent"
+        app:srcCompat="@drawable/login" />
 
     <ImageButton
         android:id="@+id/registerbtn"
-        android:layout_width="220dp"
-        android:layout_height="55dp"
+        android:layout_width="187dp"
+        android:layout_height="48dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="42dp"
         android:layout_weight="1"
-        app:srcCompat="@drawable/register_btn" />
+        android:elevation="30dp"
+        android:background="@android:color/transparent"
+        app:srcCompat="@drawable/reg_btn" />
 
-    <ImageButton
-        android:id="@+id/login"
-        android:layout_width="220dp"
-        android:layout_height="55dp"
-        android:layout_above="@+id/registerbtn"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="31dp"
-        app:srcCompat="@drawable/login" />
+
 
 </RelativeLayout>

@@ -71,14 +71,14 @@ class HomeActivity : AppCompatActivity() {
             Receiver(8,"Berklin","Tommy","9999997898","Japan","Berklin@gmail.com","Allen-masterbook","104")
         )
         val books= arrayListOf<Books>(
-            Books(101,"HCVerma",111,2,"https://5.imimg.com/data5/ANDROID/Default/2021/5/TB/KF/FI/64081808/1621056740586-jpg-500x500.jpg"),
-            Books(102,"Databasebook",112,1,"https://via.placeholder.com/200"),
-            Books(103,"Oliver-chemistry",113,2,"https://via.placeholder.com/200"),
-            Books(104,"Allen-masterbook",111,1,"https://via.placeholder.com/200"),
-            Books(105,"RichDadPoorDad",115,1,"https://via.placeholder.com/200"),
-            Books(106,"AutomateTheBoringStuff",116,0,"https://via.placeholder.com/200"),
-            Books(107,"NCERT_maths",117,0,"https://via.placeholder.com/200"),
-            Books(108,"NCERT_Physics",111,1,"https://via.placeholder.com/200")
+            Books(101,"HCVerma Part 1",111,2,"https://m.media-amazon.com/images/I/51MUOHEBCxL._SX388_BO1,204,203,200_.jpg"),
+            Books(102,"HCVerma Part 2",111,1,"https://m.media-amazon.com/images/I/51WKljRVSyL._SX385_BO1,204,203,200_.jpg"),
+            Books(103,"Chemistry NCERT(PART2)",112,2,"https://m.media-amazon.com/images/I/41DVb8jFa-L._SX387_BO1,204,203,200_.jpg"),
+            Books(104,"Chemistry NCERT(PART1)",112,1,"https://m.media-amazon.com/images/I/41ZEuWtmqsL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg"),
+            Books(105,"Biology NCERT(CLASS 11)",113,1,"https://m.media-amazon.com/images/I/61I5v1h7j1L._SX198_BO1,204,203,200_QL40_FMwebp_.jpg"),
+            Books(106,"Biology NCERT(CLASS 12)",113,0,"https://m.media-amazon.com/images/I/51+PUz96KiL._SX258_BO1,204,203,200_.jpg"),
+            Books(107,"Mathematics NCERT",114,0,"https://m.media-amazon.com/images/I/51F2g74f2US._SY326_BO1,204,203,200_.jpg"),
+            Books(108,"Mathematics RS Aggarwal",114,1,"https://m.media-amazon.com/images/I/41wNWkEhvRL._SX319_BO1,204,203,200_.jpg")
         )
 
         val BookCategory=listOf(
@@ -117,7 +117,7 @@ class HomeActivity : AppCompatActivity() {
         lifecycleScope.launch {
             donors.forEach { dao.insertDonor(it)}
             receivers.forEach { dao.insertReceiver(it) }
-            books.forEach { dao.insertBooks(it) }
+            books.forEach { dao.insertBooksAll(books) }
             cart.forEach { dao.insertCart(it) }
             BookCategory.forEach {dao.insertBookCategory(it)}
             donorbooksrelation.forEach {dao.insertDonorBooksCross(it)}

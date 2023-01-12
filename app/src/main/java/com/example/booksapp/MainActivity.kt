@@ -34,6 +34,10 @@ class MainActivity : AppCompatActivity() {
             val res = authorizeLogin()
             //Toast.makeText(this@MainActivity, "Login Successful", Toast.LENGTH_LONG).show()
         }
+        binding.backBtn.setOnClickListener {
+            val intent = Intent(this, LandingActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun authorizeLogin() {

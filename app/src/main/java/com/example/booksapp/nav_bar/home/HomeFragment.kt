@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.booksapp.Books.Books
 import com.example.booksapp.BooksAdapter
 import com.example.booksapp.BooksDatabase
@@ -24,10 +25,8 @@ class HomeFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-    private lateinit var em : TextView
-
-    private lateinit var b : TextView
-    private lateinit var avail : Button
+    private lateinit var recycler_view: RecyclerView
+    private lateinit var adapter: BooksAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,30 +39,9 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        //val dao = BooksDatabase.getDatabase(this).dbProjectDao
-        //val intent : Inent
-        //val title = parseIntent().getStringExtra("title")
 
-        /*fun Intent.getData(key: String): String {
-            return extras?.getString(key) ?: "intent is null"
-        }
-        val title = intent.getData("title")
 
-        b = binding.bookName
-        b.text = title*/
-
-       /* avail = binding.availability
-        avail.setOnClickListener {
-            AlertDialog.Builder(activity)
-                .setMessage("$title is in stock")
-                .setPositiveButton("OK") { dialog, which ->
-
-                }
-                .create()
-                .show()
-        }*/
-
-        val books= arrayListOf<Books>(
+        /*val books= arrayListOf<Books>(
             Books(101,"HCVerma",111,2,"https://5.imimg.com/data5/ANDROID/Default/2021/5/TB/KF/FI/64081808/1621056740586-jpg-500x500.jpg"),
             Books(102,"Databasebook",112,1,"https://via.placeholder.com/200"),
             Books(103,"Oliver-chemistry",113,2,"https://via.placeholder.com/200"),
@@ -72,25 +50,33 @@ class HomeFragment : Fragment() {
             Books(106,"AutomateTheBoringStuff",116,0,"https://via.placeholder.com/200"),
             Books(107,"NCERT_maths",117,0,"https://via.placeholder.com/200"),
             Books(108,"NCERT_Physics",111,1,"https://via.placeholder.com/200")
-        )
+        )*/
 
-        /*val bookList : ArrayList<Books> = ArrayList()
+        val bookList : ArrayList<Books> = ArrayList()
+        //bookList.clear()
+        //val inviteAdapter = InviteAdapter(bookList)
         CoroutineScope(Dispatchers.IO).launch {
-
+            bookList.clear()
             bookList.addAll(getAllBooks())
-        }*/
 
-        binding.recyclerview.apply{
-            layoutManager = LinearLayoutManager(context.applicationContext)
-            adapter = BooksAdapter(books)
         }
+
+        /*binding.recyclerview.apply{
+            layoutManager = LinearLayoutManager(context.applicationContext, HorizontalScrollView)
+            adapter = BooksAdapter(books)
+        }*/
+        recycler_view = binding.recyclerview
+        adapter = BooksAdapter(bookList)
+        recycler_view.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL, false)
+        recycler_view.adapter = adapter
+
         return root
     }
 
-    /*private suspend fun getAllBooks() : ArrayList<Books>{
+    private suspend fun getAllBooks() : List<Books> {
         val db = BooksDatabase.getDatabase(requireContext())
         return db.dbProjectDao.getAllBooks()
-    }*/
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

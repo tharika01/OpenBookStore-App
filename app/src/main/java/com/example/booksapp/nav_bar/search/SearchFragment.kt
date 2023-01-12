@@ -14,11 +14,11 @@ import com.example.booksapp.Entities.book_category.MathActivity
 import com.example.booksapp.Entities.book_category.PhyActivity
 import com.example.booksapp.Entities.login.SignUpActivity
 import com.example.booksapp.R
-import com.example.booksapp.databinding.FragmentSearchBinding
+import com.example.booksapp.databinding.FragmentCategoryBinding
 
 class SearchFragment : Fragment() {
 
-    private var _binding: FragmentSearchBinding? = null
+    private var _binding: FragmentCategoryBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -32,7 +32,7 @@ class SearchFragment : Fragment() {
         val dashboardViewModel =
             ViewModelProvider(this).get(SearchViewModel::class.java)
 
-        _binding = FragmentSearchBinding.inflate(inflater, container, false)
+        _binding = FragmentCategoryBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         /*return inflater.inflate(R.layout.fragment_search, container, false)

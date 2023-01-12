@@ -14,4 +14,10 @@
     <color name="magenta">#7B2869</color>
     <color name="Bottom_nav_bar">#A267AC</color>
     <color name="lilac2">#E5B8F4</color>
+    <color name="DarkPrimary">#161B33</color>
+    <color name="DarkSecondary">#0A014F</color>
+    <color name="utility">#E97777</color>
+    <color name="bgColor2">#E3E4FA</color>
+    <color name="lightPrimary">#D2DAFF</color>
+    <color name="lightSecondary">#5AA9E6</color>
 </resources>

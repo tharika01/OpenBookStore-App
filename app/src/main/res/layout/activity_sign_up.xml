@@ -9,8 +9,14 @@
     android:paddingTop="16dp"
     android:paddingRight="16dp"
     android:paddingBottom="16dp"
-    android:background="#cec4ff">
+    android:background="@drawable/login_pg">
 
+    <ImageButton
+        android:id="@+id/backBtn"
+        android:layout_width="37dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:srcCompat="@drawable/back_arrow" />
     <EditText
         android:id="@+id/editTextFName"
         android:layout_width="350dp"
@@ -118,7 +124,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:backgroundTint="#ab86b3"
+        android:backgroundTint="@color/DarkSecondary"
         android:textColor="@color/white"
         android:text="Sign Up">
 

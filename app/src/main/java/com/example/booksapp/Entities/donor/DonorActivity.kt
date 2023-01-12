@@ -46,7 +46,7 @@ class DonorActivity : AppCompatActivity() {
         //val emailId=binding.etemailId.text.toString()
         //val phoneNumber=binding.etphoneNumber.text.toString()
         val bookName= binding.etbookName.text.toString()
-        val donorID = binding.etDonorNoRead.text.toString()
+        val donorID = binding.etDonorID.text.toString()
         val url = binding.photoUrl.text.toString()
         //donor id add
 
@@ -72,7 +72,7 @@ class DonorActivity : AppCompatActivity() {
             binding.etbookNumber.text.clear()
             binding.etbookName.text.clear()
             binding.photoUrl.text.clear()
-            binding.etDonorNoRead.text.clear()
+            binding.etDonorID.text.clear()
             Toast.makeText(this@DonorActivity, "Successfully updated", Toast.LENGTH_SHORT).show()
         }else{
             Toast.makeText(this@DonorActivity,"Please Enter data", Toast.LENGTH_SHORT).show()
@@ -91,7 +91,7 @@ class DonorActivity : AppCompatActivity() {
 
     private fun readData() {
 
-        val donorid = binding.etDonorNoRead.text.toString()
+        val donorid = binding.etDonorID.text.toString()
 
         //Donor id not empty
         if (donorid.isNotEmpty()) {

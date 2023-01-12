@@ -42,6 +42,9 @@ interface DBProjectDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertBooks(books: Books)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertBooksAll(bookList : List<Books>)
+
     //Insert to book category
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertBookCategory(bookCategory: BookCategory)
@@ -124,5 +127,5 @@ interface DBProjectDao {
     suspend fun deleteBook(bookName: String?)
 
     @Query("SELECT * FROM books_table")
-    fun getAllBooks() : LiveData<List<Books>>
+    fun getAllBooks() : List<Books>
 }
