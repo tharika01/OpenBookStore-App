@@ -4,12 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.booksapp.entity.book_category.CategoriesAdapter
 import com.example.booksapp.Books.Books
 import com.example.booksapp.BooksAdapter
 import com.example.booksapp.BooksDatabase
@@ -70,6 +69,29 @@ class HomeFragment : Fragment() {
         recycler_view.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL, false)
         recycler_view.adapter = adapter
 
+        //Top scroll items
+        val categories = listOf(
+            "Python",
+            "Physics",
+            "DBMS",
+            "Chemistry",
+            "Comics",
+            "Python",
+            "Physics",
+            "Biology",
+            "Unix Programming",
+            "Datastructures"
+        )
+
+        //SCrolling option for top categories on home page
+        binding.categoriesRecyclerView.apply {
+            layoutManager = androidx.recyclerview.widget.LinearLayoutManager(
+                activity,
+                androidx.recyclerview.widget.RecyclerView.HORIZONTAL,
+                false
+            )
+            adapter = CategoriesAdapter(categories)
+        }
         return root
     }
 

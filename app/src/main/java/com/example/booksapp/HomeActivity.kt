@@ -9,14 +9,14 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.example.booksapp.Books.Books
-import com.example.booksapp.Entities.Relations.Books_Donor.DonorBooksCross
-import com.example.booksapp.Entities.Relations.Books_Receiver.ReceiverBooksCross
-import com.example.booksapp.Entities.Relations.Donor_Receiver.DonorReceiverCross
-import com.example.booksapp.Entities.book_category.BookCategory
-import com.example.booksapp.Entities.cart.Cart
-import com.example.booksapp.Entities.donor.Donor
+import com.example.booksapp.entity.Relations.Books_Donor.DonorBooksCross
+import com.example.booksapp.entity.Relations.Books_Receiver.ReceiverBooksCross
+import com.example.booksapp.entity.Relations.Donor_Receiver.DonorReceiverCross
+import com.example.booksapp.entity.book_category.BookCategory
+import com.example.booksapp.entity.cart.Cart
+import com.example.booksapp.entity.donor.Donor
 import com.example.booksapp.databinding.ActivityHomeBinding
-import com.example.booksapp.Entities.donor.DonorActivity
+import com.example.booksapp.entity.donor.DonorActivity
 import com.example.booksapp.receiver.Receiver
 import kotlinx.coroutines.launch
 

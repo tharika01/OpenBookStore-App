@@ -6,17 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.booksapp.databinding.FragmentProfileBinding
 import androidx.lifecycle.ViewModelProvider
 import com.example.booksapp.BooksDatabase
-import com.example.booksapp.Entities.login.Login
 import com.example.booksapp.LandingActivity
-import com.example.booksapp.MainActivity
-import com.example.booksapp.R
 import com.example.booksapp.databinding.ActivityReceiverBinding
-import kotlinx.coroutines.NonDisposableHandle.parent
 
 class ProfileFragment : Fragment() {
 

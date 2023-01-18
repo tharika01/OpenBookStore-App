@@ -8,7 +8,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.booksapp.Books.Books
-import com.example.booksapp.nav_bar.home.HomeFragment
 import com.squareup.picasso.Picasso
 
 class BooksAdapter(private val books: ArrayList<Books>) :RecyclerView.Adapter<BooksAdapter.ViewHolder>(){

@@ -3,12 +3,8 @@ package com.example.booksapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import com.example.booksapp.Entities.login.SignUpActivity
+import com.example.booksapp.entity.login.SignUpActivity
 import com.example.booksapp.databinding.ActivtyLandingBinding
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 class LandingActivity : AppCompatActivity() {
 

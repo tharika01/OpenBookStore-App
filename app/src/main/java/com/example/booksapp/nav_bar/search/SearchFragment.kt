@@ -2,18 +2,15 @@ package com.example.booksapp.nav_bar.search
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.booksapp.Entities.book_category.BioActivity
-import com.example.booksapp.Entities.book_category.ChemActivity
-import com.example.booksapp.Entities.book_category.MathActivity
-import com.example.booksapp.Entities.book_category.PhyActivity
-import com.example.booksapp.Entities.login.SignUpActivity
-import com.example.booksapp.R
+import com.example.booksapp.entity.book_category.BioActivity
+import com.example.booksapp.entity.book_category.ChemActivity
+import com.example.booksapp.entity.book_category.MathActivity
+import com.example.booksapp.entity.book_category.PhyActivity
 import com.example.booksapp.databinding.FragmentCategoryBinding
 
 class SearchFragment : Fragment() {

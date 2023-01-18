@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -13,15 +13,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BooksApp"
-        tools:targetApi="31" >
+        tools:targetApi="31">
         <activity
-            android:name=".orderComplete"
-            android:exported="false" >
+            android:name=".category_row"
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <!--<activity
+        <activity
+            android:name=".orderComplete"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <!--
+<activity
             android:name=".orderComplete"
             android:exported="false"
             android:label="@string/title_activity_succesful"
@@ -29,8 +37,8 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>!-->
-
+        </activity>!
+        -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-2046241422238764~3503622393" />
@@ -38,7 +46,7 @@
         <activity
             android:name=".HomeActivity"
             android:exported="false"
-            android:label="@string/title_activity_home" >
+            android:label="@string/title_activity_home">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -46,7 +54,7 @@
         <activity
             android:name=".BooksDetails"
             android:exported="false"
-            android:label="Book details" >
+            android:label="Book details">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -59,65 +67,65 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Entities.login.SignUpActivity"
+            android:name=".entity.login.SignUpActivity"
             android:exported="false"
-            android:label="SignUp" >
+            android:label="SignUp">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Entities.donor.DonorActivity"
+            android:name=".entity.donor.DonorActivity"
             android:exported="false"
-            android:label="Donate" >
+            android:label="Donate">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Entities.receiver.ReceiverActivity"
+            android:name=".entity.receiver.ReceiverActivity"
             android:exported="false"
-            android:label="Receiver" >
+            android:label="Receiver">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Entities.cart.CartActivity"
+            android:name=".entity.cart.CartActivity"
             android:exported="false"
-            android:label="Cart" >
+            android:label="Cart">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Entities.book_category.ChemActivity"
+            android:name=".entity.book_category.ChemActivity"
             android:exported="false"
-            android:label="Chem" >
+            android:label="Chem">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Entities.book_category.PhyActivity"
+            android:name=".entity.book_category.PhyActivity"
             android:exported="false"
-            android:label="physics" >
+            android:label="physics">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Entities.book_category.BioActivity"
+            android:name=".entity.book_category.BioActivity"
             android:exported="false"
-            android:label="Bio" >
+            android:label="Bio">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Entities.book_category.MathActivity"
+            android:name=".entity.book_category.MathActivity"
             android:exported="false"
-            android:label="Math" >
+            android:label="Math">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -125,14 +133,14 @@
         <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:label="Math" >
+            android:label="Math">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".LandingActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
